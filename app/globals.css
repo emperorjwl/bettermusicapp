@@ -1,42 +1,143 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  background-color: #777166;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@font-face {
+  font-family: "San Francisco";
+  src: url("/fonts/sanfrancisco.woff2") format("woff2"),
+    url("/fonts/sanfrancisco.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+body {
+  font-family: "San Francisco", sans-serif;
+}
+
+
+.now-playing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+.albumart img {
+  border-radius: 10px;
+  height: 450px;
+  width: 450px;
+}
+
+.album-info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  font-size: 20px;
+
+}
+
+.artist {
+  position: relative;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.album-title {
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+.track-title {
+  padding-right: 5px;
+  font-weight: bold;
+}
+
+.artist-name {
+  padding-right: 5px;
+}
+
+.album-name {
+  padding-left: 5px;
+}
+
+.artist-album {
+  display: flex;
+  color: rgba(255, 255, 255, 0.542);
+  padding-bottom: 10px;
+}
+
+.favorite {
+  display: none;
+}
+
+.controls {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.actual-controls {
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+}
+
+.rewind img {
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.play img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.forward img {
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.extras {
+  padding-top: 50px;
+  padding-right: 20px;
+  padding-left: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background-color: #e0e0e02a;
+  border-radius: 3px;
+  margin: 20px 0;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #e0e0e0;
+  border-radius: 3px;
+  transition: width 0.1s linear;
+}
+
+@media (max-width: 600px) {
+  * {
+    display: none;
   }
 }
